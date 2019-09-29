@@ -1,0 +1,37 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        theme:
+          type: tab
+          title: Theme
+          fields:
+            layout_options:
+              type: section
+              title: Layout options
+              underline: true
+
+            header.fullwidth:
+              type: toggle
+              label: Fullwidth layout
+              help: Disables the sidebar
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
+            header_image:
+              type: section
+              title: Header Image
+              underline: true
+
+            header.hero:
+              type: text
+              label: Custom Hero Image
+              help: image filename that exists in the page folder. If not provided, the theme default is used.
+              placeholder: For example: myimage.jpg

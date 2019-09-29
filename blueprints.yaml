@@ -28,3 +28,13 @@ form:
         0: Disabled
       validate:
         type: bool
+    default_header_hero:
+      type: file
+      label: Default header hero image
+      size: large
+      destination: 'theme://img/hero'
+      multiple: false
+      markdown: true
+      description: Will be used instead of default hero `theme://img/hero-bg.jpg`
+      accept:
+        - image/*
