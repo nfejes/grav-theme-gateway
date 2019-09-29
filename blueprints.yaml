@@ -13,3 +13,18 @@ bugs: https://github.com/getgrav/grav-theme-gateway/issues
 license: GPLv2
 dependencies:
   - { name: grav, version: '>=1.5.10' }
+
+form:
+  validation: loose
+  fields:
+    infinite_footer:
+      type: toggle
+      label: Infinite footer
+      help: Enable or disable the infinite footer bar.
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool

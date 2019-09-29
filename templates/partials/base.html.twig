@@ -29,7 +29,9 @@
         {% do assets.addJs('theme://js/rescue_toggle.js') %}
         {% do assets.addJs('theme://js/rescue_progressbar.js') %}
         {% do assets.addJs('theme://js/waypoints.min.js') %}
-        {% do assets.addJs('theme://js/infinity.js') %}
+        {% if theme_var('infinite_footer') %}
+            {% do assets.addJs('theme://js/infinity.js') %}
+        {% endif %}
     {% endblock %}
     
     {% block assets deferred %}
@@ -59,6 +61,7 @@
         {% endblock %}
     </div>
 
+    {% if theme_var('infinite_footer') %}
     <script type="text/javascript">
 		//<![CDATA[
 		var infiniteScroll = {"settings":{"id":"main","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"page","click_handle":"1","text":"Older posts"}};
@@ -78,6 +81,7 @@
         {% endif %}
       </div>
     </div>
+    {% endif %}
 
 {{ assets.js('bottom')|raw }} 
 </body>
