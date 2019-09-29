@@ -51,3 +51,14 @@
   padding-top: 2em;
 }
 </style>
+
+<script>
+window.addEventListener("resize", function() {
+  var viewportHeight = document.documentElement.clientHeight;
+  var headers = document.getElementsByClassName('home-header-bg');
+  for (var i = 0; i < headers.length; i++) {
+    var header = headers.item(i);
+    header.style.backgroundPositionY = (100 - 50 * header.clientHeight / viewportHeight) + '%';
+  }
+});
+</script>
