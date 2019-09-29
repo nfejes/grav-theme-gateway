@@ -1,0 +1,34 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            right_side:
+              type: section
+              title: Right side content
+              underline: true
+            header.content_right:
+              type: markdown
+        theme:
+          type: tab
+          title: Theme
+          fields:
+            buttons:
+              type: section
+              title: Buttons
+              underline: true
+            header.buttons:
+                type: array
+                label: Buttons left
+                help: Buttons to be showed on the left side
+                placeholder_key: Label
+                placeholder_value: 'https://www.example.com'
+            header.buttons_right:
+                type: array
+                label: Buttons right
+                help: Buttons to be showed on the right side
+                placeholder_key: Label
+                placeholder_value: 'https://www.example.com'

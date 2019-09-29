@@ -1,0 +1,21 @@
+<div class="row {{ page.header.class }}">
+   <div class="large-12 columns">
+      <div class="rescue-column rescue-one-half rescue-column-first  rescue-all">
+         {{ page.content }}
+         <p>
+           {% for label, url in page.header.buttons %}
+           <a href="{{ url }}" class="button radius">{{ label }}</a>
+           {% endfor %}
+         </p>
+      </div>
+      <div class="rescue-column rescue-one-half rescue-column-last  rescue-all">
+         {{ page.header.content_right|markdown }}
+         <p>
+           {% for label, url in page.header.buttons_right %}
+           <a href="{{ url }}" class="button radius">{{ label }}</a>
+           {% endfor %}
+         </p>
+      </div>
+   </div>
+   <!-- .large-12 -->
+</div>
