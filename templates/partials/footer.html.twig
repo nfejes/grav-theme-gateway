@@ -10,11 +10,11 @@
                     {% endif %}
                      <div class="textwidget">
                        {% if site.footer.widget.description %}
-                        <p>{{ site.footer.widget.description }}</p>
-                      {% endif %}
-                        {% if site.footer.widget.link.url or site.footer.widget.link.text %}
+                        <p>{{ site.footer.widget.description|markdown }}</p>
+                       {% endif %}
+                       {% if site.footer.widget.link.url or site.footer.widget.link.text %}
                         <p><a class="more-link" href="{{ site.footer.widget.link.url }}">{{ site.footer.widget.link.text }}</a></p>
-                        {% endif %}
+                       {% endif %}
                      </div>
                   </aside>
                </div>

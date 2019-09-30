@@ -1,0 +1,70 @@
+# This blueprint is not supported by the current version of grav (1.6 as of writing)
+# It can be used by linking it to the user blueprints:
+#   cd gravroot/user
+#   mkdir -p blueprints/config
+#   cd blueprint/config
+#   ln -s ../../themes/gateway/blueprints/config/site.yaml
+
+extends@:
+    type: blueprints/config/site
+    context: system://
+
+title: PLUGIN_ADMIN.SITE
+form:
+    validation: loose
+    fields:
+
+        theme_content:
+            type: section
+            title: Theme site config
+            underline: true
+
+            fields:
+                copyright:
+                    type: text
+                    label: Copyright message (HTML)
+                    size: large
+                    placeholder: Copyright © <a href="example.com">Example.com</a>
+                # TODO site.logo
+
+                header_content:
+                    type: section
+                    title: Header content
+                    underline: true
+                header.title:
+                    type: text
+                    label: Site header title
+                    size: large
+                    placeholder: The City & the Wild
+                header.description:
+                    type: textarea
+                    label: Site header description (Markdown)
+                    size: large
+                    placeholder: Header description
+                # TODO header.buttons
+
+                footer_widget:
+                    type: section
+                    title: Footer widget
+                    underline: true
+                footer.widget.title:
+                    type: text
+                    size: large
+                    label: Widget title
+                    placeholder: Widget title
+                    help: Title of the left side widget
+                footer.widget.link.text:
+                    type: text
+                    size: large
+                    label: Widget link text
+                    placeholder: Example
+                footer.widget.link.url:
+                    type: text
+                    size: large
+                    label: Widget link URL
+                    placeholder: https://www.example.com
+                footer.widget.description:
+                    type: textarea
+                    label: Widget text content (Markdown)
+                    size: large
+                    placeholder: Widget content description
