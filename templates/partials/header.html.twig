@@ -2,9 +2,11 @@
 
 <div class="home-header-bg clearfix">
   <div class="site-branding">
+    {% if site.logo %}
     <a href="{{ base_url_absolute }}">
       <img class="logo" src="{{ theme_url }}/img/{{ site.logo }}" alt="{{ site.logo }}">
     </a>
+    {% endif %}
   </div>
   <div class="hero-widgets-wrap">
     <div class="row">
