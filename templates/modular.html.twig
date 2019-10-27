@@ -6,7 +6,10 @@
   {% include 'partials/header.html.twig' %}
 {% endblock %}
 
+{% set has_content = page.content|trim|length > 0 %}
+{% set has_featured = featured|length > 0 %}
 {% block content %}
+{% if has_content %}
 <div class="home_posts_titles">
   <div class="row">
     <div class="large-12 columns">
@@ -14,7 +17,8 @@
     </div>
   </div>
 </div>
-{% if featured %}
+{% endif %}
+{% if has_featured %}
 <div class="featured-posts">
     {% for row in featured|batch(3) %}
     <div class="row">
@@ -28,7 +32,9 @@
 </div>
 {% endif %}
 
-  <hr>
+{% if has_content or has_featured %}
+<hr>
+{% endif %}
 
 {% for module in page.collection() %}
 {{ module.content }}
