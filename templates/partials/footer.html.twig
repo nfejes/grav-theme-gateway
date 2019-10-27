@@ -3,7 +3,10 @@
       <div class="large-12 columns">
          <footer id="colophon" class="site-footer" role="contentinfo">
             <div class="row">
-               <div class="large-4 columns">
+               {% set width = 12 %}
+               {% set width = config.plugins.archives.enabled ? width - 4 : width %}
+               {% set width = (site.social or config.plugins.simplesearch.enabled) ? width - 4 : width %}
+               <div class="large-{{ width }} columns">
                   <aside id="text-5" class="widget widget_text">
                     {% if site.footer.widget.title %}
                      <h1 class="widget-title">{{ site.footer.widget.title }}</h1>
@@ -26,6 +29,7 @@
                   </aside>
                </div>
                {% endif %}
+               {% if site.social or config.plugins.simplesearch.enabled %}
                <div class="large-4 columns">
                  {% if site.social %}
                   <aside id="text-6" class="widget widget_text">
@@ -44,6 +48,7 @@
                   </aside>
                    {% endif %}
                </div>
+               {% endif %}
             </div>
             {% if site.copyright %}
             <div class="site-info">
