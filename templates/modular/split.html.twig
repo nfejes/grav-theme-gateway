@@ -1,4 +1,7 @@
 <div class="row {{ page.header.class }}">
+   {% if page.header.heading %}
+   <h1>{{page.header.heading}}</h1>
+   {% endif %}
    <div class="large-12 columns">
       <div class="rescue-column rescue-one-half rescue-column-first  rescue-all">
          {{ page.content }}

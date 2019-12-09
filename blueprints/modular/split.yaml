@@ -6,6 +6,11 @@ form:
       fields:
         content:
           fields:
+            header.heading:
+              type: text
+              label: Common heading
+              help: Common heading displayed above both sides
+              placeholder: Heading
             right_side:
               type: section
               title: Right side content
