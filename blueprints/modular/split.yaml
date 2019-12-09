@@ -21,6 +21,20 @@ form:
           type: tab
           title: Theme
           fields:
+            header.left_weight:
+              type: toggle
+              label: Left side weight
+              help: Left side weight
+              highlight: 12
+              default: 12
+              options:
+                14: 1/4
+                13: 1/3
+                12: 1/2
+                23: 2/3
+                34: 3/4
+              validate:
+                type: int
             buttons:
               type: section
               title: Buttons

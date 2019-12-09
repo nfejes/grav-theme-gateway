@@ -1,9 +1,17 @@
+{% set weight_map = {
+   14: ['rescue-one-fourth', 'rescue-three-fourth'],
+   13: ['rescue-one-third', 'rescue-two-third'],
+   12: ['rescue-one-half', 'rescue-one-half'],
+   23: ['rescue-two-third', 'rescue-one-third'],
+   34: ['rescue-three-fourth', 'rescue-one-fourth']
+} %}
+{% set weights = weight_map[page.header.left_weight]|default(weight_map[12]) %}
 <div class="row {{ page.header.class }}">
    {% if page.header.heading %}
    <h1>{{page.header.heading}}</h1>
    {% endif %}
    <div class="large-12 columns">
-      <div class="rescue-column rescue-one-half rescue-column-first  rescue-all">
+      <div class="rescue-column {{weights[0]}} rescue-column-first rescue-all">
          {{ page.content }}
          <p>
            {% for label, url in page.header.buttons %}
@@ -11,7 +19,7 @@
            {% endfor %}
          </p>
       </div>
-      <div class="rescue-column rescue-one-half rescue-column-last  rescue-all">
+      <div class="rescue-column {{weights[1]}} rescue-column-last rescue-all">
          {{ page.header.content_right|markdown }}
          <p>
            {% for label, url in page.header.buttons_right %}
